@@ -1,0 +1,88 @@
+---
+ztp:
+  default:
+    registration: 'http://198.18.99.90/ztp/bootstrap'
+    gateway: 198.18.99.1
+    nameservers:
+      - '198.18.100.160'
+  general:
+    subnets:
+      - network: 198.18.99.0
+        netmask: 255.255.255.0
+        gateway: 198.18.99.1
+        nameservers:
+          - '198.18.100.160'
+        start: 198.18.99.101
+        end: 198.18.99.119
+        lease_time: 86400
+      - network: 198.18.98.0
+        netmask: 255.255.255.0
+        gateway: 198.18.98.1
+        nameservers:
+          - '198.18.100.160'
+        start: 198.18.98.101
+        end: 198.18.98.119
+        lease_time: 300
+
+  clients:
+    # AVD/CVP Integration
+    - name: SJ-SPINE1
+      mac: '50:00:00:06:00:01'
+      ip4: 198.18.99.101
+    - name: SJ-SPINE2
+      mac: '50:00:00:06:00:02'
+      ip4: 198.18.99.102
+    - name: SJ-LEAF1
+      mac: '50:00:00:06:00:03'
+      ip4: 198.18.99.103
+    - name: SJ-LEAF2
+      mac: '50:00:00:06:00:04'
+      ip4: 198.18.99.104
+    - name: SJ-LEAF3
+      mac: '50:00:00:06:00:05'
+      ip4: 198.18.99.105
+    - name: SJ-LEAF4
+      mac: '50:00:00:06:00:06'
+      ip4: 198.18.99.106
+    - name: SJ-DCI1
+      mac: '50:00:00:06:00:07'
+      ip4: 198.18.99.107
+    - name: SJ-DCI2
+      mac: '50:00:00:06:00:08'
+      ip4: 198.18.99.108
+    - name: AS-SPINE1
+      mac: '50:00:00:06:00:11'
+      ip4: 198.18.98.101
+      gateway: 198.18.98.1
+    - name: AS-SPINE2
+      mac: '50:00:00:06:00:12'
+      ip4: 198.18.98.102
+      gateway: 198.18.98.1
+    - name: AS-LEAF1
+      mac: '50:00:00:06:00:13'
+      ip4: 198.18.98.103
+      gateway: 198.18.98.1
+    - name: AS-LEAF2
+      mac: '50:00:00:06:00:14'
+      ip4: 198.18.98.104
+      gateway: 198.18.98.1
+    - name: AS-LEAF3
+      mac: '50:00:00:06:00:15'
+      ip4: 198.18.98.105
+      gateway: 198.18.98.1
+    - name: AS-LEAF4
+      mac: '50:00:00:06:00:16'
+      ip4: 198.18.98.106
+      gateway: 198.18.98.1
+    - name: AS-DCI1
+      mac: '50:00:00:06:00:17'
+      ip4: 198.18.98.107
+      gateway: 198.18.98.1
+    - name: AS-DCI2
+      mac: '50:00:00:06:00:18'
+      ip4: 198.18.98.108
+      gateway: 198.18.98.1
+
+
+
+

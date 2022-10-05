@@ -1,0 +1,58 @@
+---
+# Validation lab
+# local users
+local_users:
+  admin:
+    privilege: 15
+    role: network-admin
+    sha512_password: "$6$pwmzPZqxql2yZ.ge$Cx7b5gTa9C7go/skTK0W88zdkBxFBuAmsol.TkWcnGlpRQohUMxzzHQmIzyZ/5M8T33.qSZMFPsgMgmTzM6r01"
+
+  cvpadmin:
+    privilege: 15
+    role: network-admin
+    sha512_password: "$6$lhcX5i6a7cVCvwux$n4KM19WOV6cFG0QumteDf9A3SA.GmBJidlSuHfWd/x9KB2yEVjynw8Kr10KJFQ0eeBgBGONpdT1HzP1uGjg3C."
+
+  ansible:
+    privilege: 15
+    role: network-admin
+    sha512_password: "$6$K0SFGHUNW.al69Yo$///VGqkYDYDpUjXKFkSWa5.WVnANiBPD8d/An/HP2I/IOd6AYSXJ9VL6FrjYrwp/SLsqwZLB7KV4hB9HGAyKv."
+
+# Cloud Vision server information
+cvp_instance_ip: 198.18.99.90
+cvp_ingestauth_key: ''
+
+# dns servers.
+name_servers:
+  - 198.18.100.160
+
+# NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
+custom_structured_configuration_ntp:
+  local_interface:
+    name: Management1
+    vrf: MGMT
+  servers:
+    - name: 129.6.15.28
+      preferred: true
+      vrf: MGMT
+    - name: 129.6.15.29
+      vrf: MGMT
+    - name: 132.163.97.4 
+      vrf: MGMT
+
+# banners
+banners:
+  motd: |
+    ######################################
+    ###                                ###
+    ###  NetDevEnv L3LS Network        ###
+    ###     Dual DC with DCI           ###
+    ###                                ###
+    ######################################
+    EOF
+
+aliases: |
+  alias CVP ping vrf MGMT 198.18.99.90
+  alias M99 ping vrf MGMT 198.18.99.1
+  alias M98 ping vrf MGMT 198.18.98.1
+  alias MAC sh bgp evpn route-type mac-ip
+  alias PRE sh bgp evpn route-type ip-prefix ipv4

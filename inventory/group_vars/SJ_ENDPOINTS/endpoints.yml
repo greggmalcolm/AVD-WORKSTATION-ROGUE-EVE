@@ -1,0 +1,24 @@
+---  
+
+servers: 
+  endpoint20:
+    adapters:
+      - endpoint_ports: [e0] 
+        switch_ports: [Ethernet6]
+        switches: [SJ-LEAF1]
+        profile: VLAN_A
+      - endpoint_ports: [e1] 
+        switch_ports: [Ethernet6]
+        switches: [SJ-LEAF2]
+        profile: VLAN_B
+  endpoint21:
+    adapters:
+      - endpoint_ports: [e0] 
+        switch_ports: [Ethernet6]
+        switches: [SJ-LEAF3]
+        profile: VLAN_A
+      - endpoint_ports: [e1] 
+        switch_ports: [Ethernet6]
+        switches: [SJ-LEAF4]
+        profile: VLAN_B
+

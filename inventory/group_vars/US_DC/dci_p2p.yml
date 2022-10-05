@@ -1,0 +1,47 @@
+l3_edge:
+  p2p_links_ip_pools:
+    DCI1: 10.255.250.2/31
+    DCI2: 10.255.250.4/31
+
+  p2p_links:
+      # Unique id per subnet_summary. Used to calculate ip addresses | Required with ip_pool
+    - id: 1
+ 
+     # IP Pool defined under p2p_links_ip_pools. A /31 will be taken from the pool per P2P link | Optional (Requires ip_pool or subnet or ip)
+      ip_pool: DCI1
+
+     # Subnet used on this P2P link | Optional (Requires ip_pool or subnet or ip)
+      subnet: 10.255.250.2/31
+
+      # Nodes where this link should be configured | Required
+      nodes: [SJ-DCI1, AS-DCI1]
+
+      # Interfaces where this link should be configured | Required
+      interfaces: [Ethernet5, Ethernet5]
+
+      # AS Numbers for BGP | Required with bgp peering
+      as: [65002, 65102]
+
+      # Add this interface to underlay routing protocol | Optional
+      include_in_underlay_protocol: true     
+
+      # Unique id per subnet_summary. Used to calculate ip addresses | Required with ip_pool
+    - id: 2
+  
+    # IP Pool defined under p2p_links_ip_pools. A /31 will be taken from the pool per P2P link | Optional (Requires ip_pool or subnet or ip)
+      ip_pool: DCI2
+ 
+    # Subnet used on this P2P link | Optional (Requires ip_pool or subnet or ip)
+      subnet: 10.255.250.4/31
+
+      # Nodes where this link should be configured | Required
+      nodes: [SJ-DCI2, AS-DCI2]
+
+      # Interfaces where this link should be configured | Required
+      interfaces: [Ethernet5, Ethernet5]
+
+      # AS Numbers for BGP | Required with bgp peering
+      as: [65002, 65102]
+
+      # Add this interface to underlay routing protocol | Optional
+      include_in_underlay_protocol: true   

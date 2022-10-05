@@ -1,0 +1,24 @@
+---
+
+port_profiles:
+  TRUNK:
+    mode: trunk
+    vlans: "1-1023"
+  VLAN_A:
+    mode: access
+    vlans: "10"
+  VLAN_B:
+    mode: access
+    vlans: "20"
+  VLAN_C:
+    mode: access
+    vlans: "110"
+  VLAN_D:
+    mode: access
+    vlans: "120"   
+  VLAN_E:
+    mode: access
+    vlans: "210"
+  VLAN_F:
+    mode: access
+    vlans: "220"   

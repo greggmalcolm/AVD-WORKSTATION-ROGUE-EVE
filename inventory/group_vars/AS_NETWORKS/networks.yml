@@ -1,0 +1,42 @@
+---
+# AVD Tenants Networks
+tenants:
+# PROD Specific Information - VRFs / VLANs
+  PROD:
+    mac_vrf_vni_base: 10000
+    vrfs:
+      PROD:
+        vrf_vni: 10
+        svis:
+          10:
+            name: VLAN_A
+            description: Used for Testing
+            enabled: true
+            ip_address_virtual: 10.1.10.1/24
+          20:
+            name: VLAN_B
+            description: Not in use
+            enabled: true
+            ip_address_virtual: 10.1.20.1/24
+# DEV Specific Information - VRFs / VLANs
+      DEV:
+        vrf_vni: 20
+        svis:
+          110:
+            name: VLAN_C
+            description: Used for Testing
+            enabled: true
+            ip_address_virtual: 10.10.10.1/24
+          120:
+            name: VLAN_D
+            description: Not in use
+            enabled: true
+            ip_address_virtual: 10.10.20.1/24
+    l2vlans:
+      210:
+        name: VLAN_E
+      220:
+        name: VLAN_F
+   
+
+ 
