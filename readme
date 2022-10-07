@@ -1,0 +1,33 @@
+This project is for 2 small DC's with a DCI consisting of two links
+    US_DC is the name for the both fabrics
+    SJ is the San Jose fabric  
+    AS is the Ashburn fabric
+
+The yaml for this project is based on directories within the inventory directory
+    group_var directories
+        US_DC
+            dci-_p2p.yml - point to point DCI links
+            common.yml - configuration common to both DC's
+        SJ_NETWORKS
+            networks.yml - overlay tenant networks
+        SJ_FABRIC
+            sj_fabric.yml - San Jose Fabric
+            sj_common.yml - configuration specific to San Jose
+        SJ_ENDPOINTS
+            endpoints.yml - configuration for endpoint ports
+            port-profiles.yml - templates for ports
+        AS_NETWORKS
+            networks.yml - overlay tenant networks
+        AS_FABRIC
+            as_fabric.yml - Ashburn Fabric
+            as_common.yml - configuration specific to Ashburn
+        AS_ENDPOINTS
+            endpoints.yml - configuration for endpoint ports
+            port-profiles.yml - templates for ports
+        CVP.yml - DHCP/ZTP configuration
+        
+    host_var directories
+        SJ-DCI1.yml - custom configuration for EVPN on SJ-DCI1 node
+        SJ-DCI2.yml - custom configuration for EVPN on SJ-DCI2 node
+        AS-DCI1.yml - custom configuration for EVPN on AS-DCI1 node
+        AS-DCI2.yml - custom configuration for EVPN on AS-DCI2 node
