@@ -31,3 +31,18 @@ The yaml for this project is based on directories within the inventory directory
         SJ-DCI2.yml - custom configuration for EVPN on SJ-DCI2 node
         AS-DCI1.yml - custom configuration for EVPN on AS-DCI1 node
         AS-DCI2.yml - custom configuration for EVPN on AS-DCI2 node
+
+For vault encryption, the sensitive fabric variables are encrypted using 'encryt_string'.  The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption.
+Both methods threw errors.  
+
+Variable
+
+**********************************************************************************************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NotImplementedError: Vault encrypted variables are not supported as password yet. Use ansible vault file instead.https://docs.ansible.com/ansible/latest/user_guide/vault.html#encrypting-files-with-ansible-vault
+fatal: [cv_server]: FAILED! 
+
+File
+
+TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] ******************************************************************************************************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: AttributeError: 'str' object has no attribute 'items'
+fatal: [cv_server]: FAILED!

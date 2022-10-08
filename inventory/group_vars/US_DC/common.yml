@@ -1,5 +1,4 @@
 ---
-# Validation lab
 # local users
 local_users:
   admin:
@@ -24,6 +23,7 @@ cvp_ingestauth_key: ''
 # dns servers.
 name_servers:
   - 198.18.100.160
+dns_domain: netdevenv.net
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 custom_structured_configuration_ntp:
@@ -50,9 +50,19 @@ banners:
     ######################################
     EOF
 
+#logging
+logging:
+  buffered:
+    size: 1000
+    level: 7
+
+# misc
 aliases: |
   alias CVP ping vrf MGMT 198.18.99.90
   alias M99 ping vrf MGMT 198.18.99.1
   alias M98 ping vrf MGMT 198.18.98.1
   alias MAC sh bgp evpn route-type mac-ip
   alias PRE sh bgp evpn route-type ip-prefix ipv4
+
+load_interval:
+  default: 30
