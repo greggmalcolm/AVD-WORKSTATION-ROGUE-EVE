@@ -1,9 +1,9 @@
-This project is for 2 small DC's with a DCI consisting of two links
+This project is a lab of 2 small DC's with a DCI consisting of two links
     US_DC is the name for the both fabrics
     SJ is the San Jose fabric  
     AS is the Ashburn fabric
 
-The yaml for this project is based on directories within the inventory directory
+The yaml for this project uses the following structure: 
     group_var directories
         US_DC
             dci-_p2p.yml - point to point DCI links
@@ -32,8 +32,7 @@ The yaml for this project is based on directories within the inventory directory
         AS-DCI1.yml - custom configuration for EVPN on AS-DCI1 node
         AS-DCI2.yml - custom configuration for EVPN on AS-DCI2 node
 
-For vault encryption, the sensitive fabric variables are encrypted using 'encryt_string'.  The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption.
-Both methods threw errors.  
+For vault encryption, the sensitive fabric variables are encrypted using 'encryt_string'.  The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption. Both methods threw errors.  
 
 Variable
 
