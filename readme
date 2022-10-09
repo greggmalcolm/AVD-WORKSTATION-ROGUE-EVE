@@ -1,4 +1,4 @@
-This project is a lab of 2 small DC's with a DCI consisting of two links
+This project is a lab of 2 small L3LS DC's with a DCI consisting of two links
     US_DC is the name for the both fabrics
     SJ is the San Jose fabric  
     AS is the Ashburn fabric
@@ -6,7 +6,7 @@ This project is a lab of 2 small DC's with a DCI consisting of two links
 The yaml for this project uses the following structure: 
     group_var directories
         US_DC
-            dci-_p2p.yml - point to point DCI links
+            dci_p2p.yml - point to point DCI links
             common.yml - configuration common to both DC's
         SJ_NETWORKS
             networks.yml - overlay tenant networks
@@ -36,13 +36,13 @@ For vault encryption, the sensitive fabric variables are encrypted using 'encryt
 
 The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption. Both methods threw errors.  
 
-Variable
+Variable encryption
 
 **********************************************************************************************
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NotImplementedError: Vault encrypted variables are not supported as password yet. Use ansible vault file instead.https://docs.ansible.com/ansible/latest/user_guide/vault.html#encrypting-files-with-ansible-vault
 fatal: [cv_server]: FAILED! 
 
-File
+File encryption
 
 TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] ******************************************************************************************************
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: AttributeError: 'str' object has no attribute 'items'
