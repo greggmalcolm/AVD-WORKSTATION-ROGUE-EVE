@@ -32,7 +32,9 @@ The yaml for this project uses the following structure:
         AS-DCI1.yml - custom configuration for EVPN on AS-DCI1 node
         AS-DCI2.yml - custom configuration for EVPN on AS-DCI2 node
 
-For vault encryption, the sensitive fabric variables are encrypted using 'encryt_string'.  The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption. Both methods threw errors.  
+For vault encryption, the sensitive fabric variables are encrypted using 'encryt_string'.  
+
+The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption. Both methods threw errors.  
 
 Variable
 
