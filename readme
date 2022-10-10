@@ -34,15 +34,15 @@ The yaml for this project uses the following structure:
 
 For vault encryption, the sensitive fabric variables are encrypted using 'encryt_string'.  
 
-The CVP usernames in the inventory were unable to be encrypted using either variable or file encryption. Both methods threw errors.  
+I was unable to encrypt the CVP accounts in the inventory using either variable or file encryption.   
 
-Variable encryption
+Variable encryption exception
 
 **********************************************************************************************
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NotImplementedError: Vault encrypted variables are not supported as password yet. Use ansible vault file instead.https://docs.ansible.com/ansible/latest/user_guide/vault.html#encrypting-files-with-ansible-vault
 fatal: [cv_server]: FAILED! 
 
-File encryption
+File encryption exception
 
 TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] ******************************************************************************************************
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: AttributeError: 'str' object has no attribute 'items'
