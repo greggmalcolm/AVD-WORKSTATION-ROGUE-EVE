@@ -26,7 +26,7 @@ The yaml for this project uses the following structure:
             port-profiles.yml - templates for ports
         CVP.yml - DHCP/ZTP configuration
         
-    host_var directories
+    host_var files
         SJ-DCI1.yml - custom configuration for EVPN on SJ-DCI1 node
         SJ-DCI2.yml - custom configuration for EVPN on SJ-DCI2 node
         AS-DCI1.yml - custom configuration for EVPN on AS-DCI1 node
