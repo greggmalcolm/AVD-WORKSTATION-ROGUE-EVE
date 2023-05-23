@@ -1,0 +1,133 @@
+---
+CVP_DEVICES:
+  AS-BL1:
+    name: AS-BL1
+    parentContainerName: AS_BL1_2
+    configlets:
+      - US_DC_CONFIGLET_AS-BL1
+    imageBundle: []
+  AS-BL2:
+    name: AS-BL2
+    parentContainerName: AS_BL1_2
+    configlets:
+      - US_DC_CONFIGLET_AS-BL2
+    imageBundle: []
+  AS-LEAF1:
+    name: AS-LEAF1
+    parentContainerName: AS_LEAF1_2
+    configlets:
+      - US_DC_CONFIGLET_AS-LEAF1
+    imageBundle: []
+  AS-LEAF2:
+    name: AS-LEAF2
+    parentContainerName: AS_LEAF1_2
+    configlets:
+      - US_DC_CONFIGLET_AS-LEAF2
+    imageBundle: []
+  AS-LEAF3:
+    name: AS-LEAF3
+    parentContainerName: AS_LEAF3_4
+    configlets:
+      - US_DC_CONFIGLET_AS-LEAF3
+    imageBundle: []
+  AS-LEAF4:
+    name: AS-LEAF4
+    parentContainerName: AS_LEAF3_4
+    configlets:
+      - US_DC_CONFIGLET_AS-LEAF4
+    imageBundle: []
+  AS-SPINE1:
+    name: AS-SPINE1
+    parentContainerName: AS_SPINES
+    configlets:
+      - US_DC_CONFIGLET_AS-SPINE1
+    imageBundle: []
+  AS-SPINE2:
+    name: AS-SPINE2
+    parentContainerName: AS_SPINES
+    configlets:
+      - US_DC_CONFIGLET_AS-SPINE2
+    imageBundle: []
+  SJ-BL1:
+    name: SJ-BL1
+    parentContainerName: SJ_BL12
+    configlets:
+      - US_DC_CONFIGLET_SJ-BL1
+    imageBundle: []
+  SJ-BL2:
+    name: SJ-BL2
+    parentContainerName: SJ_BL12
+    configlets:
+      - US_DC_CONFIGLET_SJ-BL2
+    imageBundle: []
+  SJ-LEAF1:
+    name: SJ-LEAF1
+    parentContainerName: SJ_LEAF1_2
+    configlets:
+      - US_DC_CONFIGLET_SJ-LEAF1
+    imageBundle: []
+  SJ-LEAF2:
+    name: SJ-LEAF2
+    parentContainerName: SJ_LEAF1_2
+    configlets:
+      - US_DC_CONFIGLET_SJ-LEAF2
+    imageBundle: []
+  SJ-LEAF3:
+    name: SJ-LEAF3
+    parentContainerName: SJ_LEAF3_4
+    configlets:
+      - US_DC_CONFIGLET_SJ-LEAF3
+    imageBundle: []
+  SJ-LEAF4:
+    name: SJ-LEAF4
+    parentContainerName: SJ_LEAF3_4
+    configlets:
+      - US_DC_CONFIGLET_SJ-LEAF4
+    imageBundle: []
+  SJ-SPINE1:
+    name: SJ-SPINE1
+    parentContainerName: SJ_SPINES
+    configlets:
+      - US_DC_CONFIGLET_SJ-SPINE1
+    imageBundle: []
+  SJ-SPINE2:
+    name: SJ-SPINE2
+    parentContainerName: SJ_SPINES
+    configlets:
+      - US_DC_CONFIGLET_SJ-SPINE2
+    imageBundle: []
+CVP_CONTAINERS:
+  AS_BL1_2:
+    parent_container: AS_L3LEAFS
+  AS_ENDPOINTS:
+    parent_container: US_DC
+  AS_FABRIC:
+    parent_container: US_DC
+  AS_L3LEAFS:
+    parent_container: AS_FABRIC
+  AS_LEAF1_2:
+    parent_container: AS_L3LEAFS
+  AS_LEAF3_4:
+    parent_container: AS_L3LEAFS
+  AS_NETWORKS:
+    parent_container: US_DC
+  AS_SPINES:
+    parent_container: AS_FABRIC
+  SJ_BL12:
+    parent_container: SJ_L3LEAFS
+  SJ_ENDPOINTS:
+    parent_container: US_DC
+  SJ_FABRIC:
+    parent_container: US_DC
+  SJ_L3LEAFS:
+    parent_container: SJ_FABRIC
+  SJ_LEAF1_2:
+    parent_container: SJ_L3LEAFS
+  SJ_LEAF3_4:
+    parent_container: SJ_L3LEAFS
+  SJ_NETWORKS:
+    parent_container: US_DC
+  SJ_SPINES:
+    parent_container: SJ_FABRIC
+  US_DC:
+    parent_container: Tenant

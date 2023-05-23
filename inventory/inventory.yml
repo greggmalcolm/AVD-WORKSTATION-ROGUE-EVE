@@ -4,12 +4,12 @@ all:
     CVP:
       hosts:
         cv_ztp:
-          ansible_host: 198.18.99.90
+          ansible_host: 198.18.250.50
           ansible_user: root       
           ansible_password: Arista123!
         cv_server:
-          ansible_httpapi_host: 198.18.99.90
-          ansible_host: 198.18.99.90
+          ansible_httpapi_host: 198.18.250.50
+          ansible_host: 198.18.250.50
           ansible_user: cvpadmin
           ansible_password: Arista123!
           ansible_connection: httpapi
@@ -30,9 +30,9 @@ all:
                 type: spine
               hosts:
                 SJ-SPINE1:
-                  ansible_host: 198.18.99.101
+                  ansible_host: 198.18.251.101
                 SJ-SPINE2:
-                  ansible_host: 198.18.99.102
+                  ansible_host: 198.18.251.102
             SJ_L3LEAFS:
               vars:
                 type: l3leaf
@@ -40,21 +40,21 @@ all:
                 SJ_LEAF1_2:
                   hosts:
                     SJ-LEAF1:
-                      ansible_host: 198.18.99.103
+                      ansible_host: 198.18.251.103
                     SJ-LEAF2:
-                      ansible_host: 198.18.99.104
+                      ansible_host: 198.18.251.104
                 SJ_LEAF3_4:
                   hosts:
                     SJ-LEAF3:
-                      ansible_host: 198.18.99.105
+                      ansible_host: 198.18.251.105
                     SJ-LEAF4:
-                      ansible_host: 198.18.99.105
-                SJ_DCI1_2:
+                      ansible_host: 198.18.251.105
+                SJ_BL12:
                   hosts:
-                    SJ-DCI1:
-                      ansible_host: 198.18.99.107
-                    SJ-DCI2:
-                      ansible_host: 198.18.99.108
+                    SJ-BL1:
+                      ansible_host: 198.18.251.107
+                    SJ-BL2:
+                      ansible_host: 198.18.251.108
                       
         AS_FABRIC:
           children:
@@ -63,9 +63,9 @@ all:
                 type: spine
               hosts:
                 AS-SPINE1:
-                  ansible_host: 198.18.98.101
+                  ansible_host: 198.18.252.101
                 AS-SPINE2:
-                  ansible_host: 198.18.98.102
+                  ansible_host: 198.18.252.102
             AS_L3LEAFS:
               vars:
                 type: l3leaf
@@ -73,21 +73,21 @@ all:
                 AS_LEAF1_2:
                   hosts:
                     AS-LEAF1:
-                      ansible_host: 198.18.98.103
+                      ansible_host: 198.18.252.103
                     AS-LEAF2:
-                      ansible_host: 198.18.98.104
+                      ansible_host: 198.18.252.104
                 AS_LEAF3_4:
                   hosts:
                     AS-LEAF3:
-                      ansible_host: 198.18.98.105
+                      ansible_host: 198.18.252.105
                     AS-LEAF4:
-                      ansible_host: 198.18.98.106
-                AS_DCI1_2:
+                      ansible_host: 198.18.252.106
+                AS_BL1_2:
                   hosts:
-                    AS-DCI1:
-                      ansible_host: 198.18.98.107
-                    AS-DCI2:
-                      ansible_host: 198.18.98.108                      
+                    AS-BL1:
+                      ansible_host: 198.18.252.107
+                    AS-BL2:
+                      ansible_host: 198.18.252.108                      
  
           vars:
             ansible_connection: httpapi

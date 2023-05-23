@@ -1,23 +1,35 @@
 ---  
  
 servers: 
-  endpoint20:
+  endpoint30:
     adapters:
-      - endpoint_ports: [e0] 
-        switch_ports: [Ethernet6]
-        switches: [AS-LEAF1]
-        profile: VLAN_A
-      - endpoint_ports: [e1] 
-        switch_ports: [Ethernet6]
-        switches: [AS-LEAF2]
-        profile: VLAN_B
-  endpoint21:
+      - endpoint_ports: [G1/0/1, G1/0/2]
+        switch_ports: [Ethernet6, Ethernet6]
+        switches: [AS-LEAF1, AS-LEAF2]
+        profile: SERVER_TRUNK
+        port_channel:
+          mode: active
+          description: Endpoint 30 Port-channel
+          lacp_fallback:
+            mode: static  
+
+  endpoint31:
     adapters:
-      - endpoint_ports: [e0] 
-        switch_ports: [Ethernet6]
-        switches: [AS-LEAF3]
-        profile: VLAN_A
-      - endpoint_ports: [e1] 
-        switch_ports: [Ethernet6]
-        switches: [AS-LEAF4]
-        profile: VLAN_B
+      - endpoint_ports: [G1/0/1, G1/0/2]
+        switch_ports: [Ethernet6, Ethernet6]
+        switches: [AS-LEAF3, AS-LEAF3]
+        profile: SERVER_TRUNK
+        port_channel:
+          mode: active
+          description: Endpoint 31 Port-channel
+          lacp_fallback:
+            mode: static
+
+network_ports:
+  - switches:
+      - AS-BL.
+    switch_ports:
+      - Ethernet5
+    vlans: 210-240
+    description: To DCI Switches
+    profile: DCI_TRUNK
